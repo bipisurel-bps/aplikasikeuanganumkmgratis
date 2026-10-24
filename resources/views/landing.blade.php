@@ -24,7 +24,7 @@
                 <p class="text-base font-extrabold tracking-tight text-slate-950 leading-tight">{{ config('umkm.store_name') }}</p>
                 <div class="flex items-center gap-1.5">
                     <span class="inline-block h-1.5 w-1.5 rounded-full bg-amber-500"></span>
-                    <p class="text-[11px] font-semibold text-slate-500 tracking-wide">POS &amp; Manajemen Keuangan</p>
+                    <p class="text-[11px] font-semibold text-slate-500 tracking-wide">POS &amp; Akuntansi (Instalasi Contoh)</p>
                 </div>
             </div>
         </a>
@@ -672,7 +672,7 @@
             </div>
 
             <div class="text-[11px] font-mono text-slate-400">
-                &copy; {{ date('Y') }} {{ config('umkm.store_name') }}. All rights reserved.
+                &copy; {{ date('Y') }} {{ config('umkm.store_name') }} · Instalasi Contoh untuk Uji Coba Terbuka.
             </div>
         </div>
     </div>

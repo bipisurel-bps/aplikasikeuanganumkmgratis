@@ -25,7 +25,7 @@
                 </div>
                 <div>
                     <h2 class="text-xl font-extrabold tracking-tight text-white">{{ config('umkm.store_name') }}</h2>
-                    <p class="text-xs font-semibold uppercase tracking-wider text-amber-400/90">Sistem Kasir &amp; Manajemen Keuangan</p>
+                    <p class="text-xs font-semibold uppercase tracking-wider text-amber-400/90">Sistem Kasir &amp; Manajemen Keuangan (Instalasi Contoh)</p>
                 </div>
             </div>
 
@@ -75,7 +75,7 @@
                     K
                 </div>
                 <h1 class="text-xl font-extrabold text-slate-950">{{ config('umkm.store_name') }}</h1>
-                <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Kasir &amp; Keuangan UMKM</p>
+                <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Instalasi Contoh (Demo Terbuka)</p>
             </div>
 
             <div class="card p-8 shadow-md border-slate-200">

@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'store_name' => env('STORE_NAME', 'Toko Maju Jaya'),
-    'store_address' => env('STORE_ADDRESS', 'Jl. Pasar Baru No. 12, Bandung'),
-    'store_phone' => env('STORE_PHONE', '0812-0000-0000'),
+    'store_name' => env('STORE_NAME', 'Aplikasi Keuangan UMKM'),
+    'store_address' => env('STORE_ADDRESS', 'Toko Contoh (Instalasi Demo Interaktif)'),
+    'store_phone' => env('STORE_PHONE', 'Demo Terbuka UMKM'),
 
     'payment_methods' => [
         'cash' => 'Tunai',

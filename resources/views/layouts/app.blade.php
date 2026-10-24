@@ -44,7 +44,7 @@
                 <p class="truncate text-base font-extrabold tracking-tight text-slate-950">{{ config('umkm.store_name') }}</p>
                 <div class="flex items-center gap-1.5">
                     <span class="inline-block h-1.5 w-1.5 rounded-full bg-amber-500"></span>
-                    <p class="truncate text-[11px] font-semibold tracking-wide text-slate-400">Kasir &amp; Keuangan UMKM</p>
+                    <p class="truncate text-[11px] font-semibold tracking-wide text-slate-400">Instalasi Contoh (Demo Toko)</p>
                 </div>
             </div>
         </div>
@@ -99,7 +99,7 @@
                 </button>
 
                 <nav class="flex items-center gap-2 text-xs font-semibold text-slate-400 min-w-0" aria-label="Breadcrumb">
-                    <span class="hidden sm:inline hover:text-slate-600">{{ config('umkm.store_name') }}</span>
+                    <span class="hidden sm:inline hover:text-slate-600">Instalasi Contoh (Demo)</span>
                     <span class="hidden sm:inline text-slate-300">/</span>
                     <span class="truncate font-bold text-slate-900">@yield('title')</span>
                 </nav>
