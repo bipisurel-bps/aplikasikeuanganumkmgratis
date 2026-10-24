@@ -2,6 +2,7 @@
 <html lang="id" class="scroll-smooth">
 <head>
     <meta charset="utf-8">
+    <link rel="icon" type="image/svg+xml" href="/logo.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ config('app.name') }} — Sistem Kasir &amp; Manajemen Keuangan UMKM Terpadu</title>
     <meta name="description" content="Aplikasi kasir (POS) dan manajemen keuangan terpadu untuk UMKM. Otomasi HPP moving average, buku kas real-time, kontrol beban operasional dengan bukti nota, dan laporan laba bersih riil.">
@@ -17,9 +18,7 @@
     <div class="mx-auto flex h-18 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {{-- Brand Logo --}}
         <a href="{{ route('landing') }}" class="flex items-center gap-3 group">
-            <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800 text-lg font-black text-amber-400 shadow-md ring-1 ring-white/10 group-hover:scale-105 transition-transform">
-                K
-            </div>
+            @include('partials.logo', ['class' => 'h-11 w-11'])
             <div>
                 <p class="text-base font-extrabold tracking-tight text-slate-950 leading-tight">{{ config('umkm.store_name') }}</p>
                 <div class="flex items-center gap-1.5">
@@ -644,9 +643,7 @@
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-100">
             <div class="flex items-center gap-3">
-                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-950 text-amber-400 font-black">
-                    K
-                </div>
+                @include('partials.logo', ['class' => 'h-10 w-10'])
                 <div>
                     <p class="font-extrabold text-sm text-slate-950">{{ config('umkm.store_name') }}</p>
                     <p class="text-[11px] text-slate-500">Sistem Kasir &amp; Manajemen Keuangan UMKM Terpadu</p>

@@ -2,6 +2,7 @@
 <html lang="id" class="h-full bg-slate-950">
 <head>
     <meta charset="utf-8">
+    <link rel="icon" type="image/svg+xml" href="/logo.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Masuk · {{ config('app.name') }}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,9 +21,7 @@
         {{-- Top Brand Identity --}}
         <div class="relative z-10">
             <div class="flex items-center gap-3.5 mb-8">
-                <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-slate-900 to-slate-800 text-2xl font-black text-amber-400 shadow-xl ring-1 ring-white/15">
-                    K
-                </div>
+                @include('partials.logo', ['class' => 'h-12 w-12'])
                 <div>
                     <h2 class="text-xl font-extrabold tracking-tight text-white">{{ config('umkm.store_name') }}</h2>
                     <p class="text-xs font-semibold uppercase tracking-wider text-amber-400/90">Sistem Kasir &amp; Manajemen Keuangan (Instalasi Contoh)</p>
@@ -71,8 +70,8 @@
         <div class="w-full max-w-md">
             {{-- Mobile Brand Logo --}}
             <div class="mb-8 text-center lg:hidden">
-                <div class="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-950 text-2xl font-black text-amber-400 shadow-lg">
-                    K
+                <div class="mx-auto mb-3 flex items-center justify-center">
+                    @include('partials.logo', ['class' => 'h-14 w-14'])
                 </div>
                 <h1 class="text-xl font-extrabold text-slate-950">{{ config('umkm.store_name') }}</h1>
                 <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Instalasi Contoh (Demo Terbuka)</p>
