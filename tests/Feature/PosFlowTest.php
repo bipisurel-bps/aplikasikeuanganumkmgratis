@@ -131,6 +131,11 @@ class PosFlowTest extends TestCase
         $this->actingAs($kasir)->get(route('pos'))->assertOk();
     }
 
+    public function test_landing_page_renders_successfully(): void
+    {
+        $this->get(route('landing'))->assertOk()->assertSee('Bukan Sekadar Kasir POS Biasa');
+    }
+
     public function test_all_pages_render_for_owner_with_seeded_data(): void
     {
         $this->seed();

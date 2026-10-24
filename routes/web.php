@@ -14,17 +14,23 @@ use App\Http\Controllers\SaleController;
 use App\Http\Controllers\SupplierController;
 use Illuminate\Support\Facades\Route;
 
+// Halaman Pembuka / Web Opener Produk (Landing Page)
+Route::get('/', function () {
+    return view('landing');
+})->name('landing');
+
+// Autentikasi Pengguna & Demo 1-Klik
 Route::middleware('guest')->group(function () {
     Route::get('/masuk', [AuthController::class, 'showLogin'])->name('login');
     Route::post('/masuk', [AuthController::class, 'login'])->middleware('throttle:10,1')->name('login.attempt');
+    Route::post('/demo-masuk', [AuthController::class, 'demoLogin'])->name('login.demo');
 });
 
+// Area Aplikasi Terproteksi
 Route::middleware('auth')->group(function () {
     Route::post('/keluar', [AuthController::class, 'logout'])->name('logout');
 
-    Route::get('/', fn () => redirect()->route(auth()->user()->isOwner() ? 'dashboard' : 'pos'));
-
-    // Akses owner & kasir
+    // Akses bersama: Pemilik (Owner) & Kasir
     Route::middleware('role:owner,kasir')->group(function () {
         Route::get('/kasir', [PosController::class, 'index'])->name('pos');
         Route::post('/kasir/checkout', [PosController::class, 'checkout'])->name('pos.checkout');
@@ -37,7 +43,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/penjualan/{sale}', [SaleController::class, 'show'])->name('sales.show');
     });
 
-    // Khusus owner
+    // Khusus Pemilik (Owner)
     Route::middleware('role:owner')->group(function () {
         Route::get('/dashboard', DashboardController::class)->name('dashboard');
 
