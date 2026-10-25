@@ -45,7 +45,7 @@
                 <p class="truncate text-base font-extrabold tracking-tight text-slate-950">{{ config('umkm.store_name') }}</p>
                 <div class="flex items-center gap-1.5">
                     <span class="inline-block h-1.5 w-1.5 rounded-full bg-amber-500"></span>
-                    <p class="truncate text-[11px] font-semibold tracking-wide text-slate-400">Instalasi Contoh (Demo Toko)</p>
+                    <p class="truncate text-[11px] font-semibold tracking-wide text-slate-500">Sistem Kasir &amp; Akuntansi</p>
                 </div>
             </div>
         </div>
@@ -92,6 +92,22 @@
 
     {{-- Main Workspace --}}
     <div class="flex min-w-0 flex-1 flex-col overflow-hidden">
+        {{-- Banner Notifikasi Mode Demo (Pengamat) --}}
+        @if (session('is_demo'))
+            <div class="z-40 flex flex-wrap items-center justify-between gap-3 border-b border-amber-400 bg-amber-400 px-4 py-2.5 text-xs sm:text-sm font-bold text-slate-950 shadow-xs">
+                <div class="flex items-center gap-2">
+                    <span class="flex h-2 w-2 rounded-full bg-slate-950 animate-pulse"></span>
+                    <span><strong>Mode Demo (Pengamat):</strong> Anda bebas menjelajahi laporan dan menu kasir. Perubahan data dinonaktifkan untuk menjaga kestabilan data contoh.</span>
+                </div>
+                <form method="POST" action="{{ route('logout') }}" class="shrink-0">
+                    @csrf
+                    <button type="submit" class="rounded-lg bg-slate-950 px-3 py-1 text-xs font-bold text-amber-400 hover:bg-slate-900 transition">
+                        Keluar Demo &rarr;
+                    </button>
+                </form>
+            </div>
+        @endif
+
         {{-- Sticky Glassmorphic Topbar --}}
         <header class="sticky top-0 z-30 flex h-16 shrink-0 items-center justify-between border-b border-slate-200/80 bg-white/90 px-4 sm:px-6 lg:px-8 backdrop-blur-md">
             <div class="flex items-center gap-3 min-w-0">
@@ -100,7 +116,7 @@
                 </button>
 
                 <nav class="flex items-center gap-2 text-xs font-semibold text-slate-400 min-w-0" aria-label="Breadcrumb">
-                    <span class="hidden sm:inline hover:text-slate-600">Instalasi Contoh (Demo)</span>
+                    <span class="hidden sm:inline hover:text-slate-600">Aplikasi Keuangan UMKM</span>
                     <span class="hidden sm:inline text-slate-300">/</span>
                     <span class="truncate font-bold text-slate-900">@yield('title')</span>
                 </nav>

@@ -25,6 +25,7 @@ class AuthController extends Controller
         }
 
         $request->session()->regenerate();
+        $request->session()->put('is_demo', false);
 
         return redirect()->intended($request->user()->isOwner() ? route('dashboard') : route('pos'));
     }
@@ -41,6 +42,7 @@ class AuthController extends Controller
         if ($user) {
             Auth::login($user);
             $request->session()->regenerate();
+            $request->session()->put('is_demo', true);
 
             return redirect()->intended($user->isOwner() ? route('dashboard') : route('pos'));
         }

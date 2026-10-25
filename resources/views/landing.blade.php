@@ -23,7 +23,7 @@
                 <p class="text-base font-extrabold tracking-tight text-slate-950 leading-tight">{{ config('umkm.store_name') }}</p>
                 <div class="flex items-center gap-1.5">
                     <span class="inline-block h-1.5 w-1.5 rounded-full bg-amber-500"></span>
-                    <p class="text-[11px] font-semibold text-slate-500 tracking-wide">POS &amp; Akuntansi (Instalasi Contoh)</p>
+                    <p class="text-[11px] font-semibold text-slate-500 tracking-wide">Sistem Kasir &amp; Akuntansi Terpadu</p>
                 </div>
             </div>
         </a>
@@ -39,6 +39,9 @@
 
         {{-- Right Actions --}}
         <div class="flex items-center gap-3">
+            <a href="https://wa.me/6281280000000?text=Halo%20Admin,%20saya%20ingin%20konsultasi%20penggunaan%20Aplikasi%20Keuangan%20UMKM" target="_blank" rel="noopener noreferrer" class="btn-ghost text-xs py-2 px-3 font-bold inline-flex items-center gap-1.5 border-emerald-500/40 text-emerald-700 hover:bg-emerald-50">
+                <span>💬</span> WhatsApp
+            </a>
             @auth
                 <a href="{{ auth()->user()->isOwner() ? route('dashboard') : route('pos') }}" class="btn-primary text-xs py-2 px-4 font-bold shadow-sm">
                     Buka Aplikasi &rarr;
@@ -83,10 +86,20 @@
         {{-- Action Buttons --}}
         <div class="mt-8 flex flex-wrap items-center justify-center gap-3.5">
             <a href="#demo" class="btn-primary text-sm py-3.5 px-6 font-extrabold shadow-lg">
-                🚀 Coba Demo Interaktif Sekarang &rarr;
+                🚀 Coba Demo 1-Klik Sekarang &rarr;
             </a>
-            <a href="{{ route('login') }}" class="btn-ghost text-sm py-3.5 px-6 font-bold shadow-xs">
-                Masuk ke Akun Anda
+            <a href="https://wa.me/6281280000000?text=Halo%20Admin,%20saya%20ingin%20konsultasi%20penggunaan%20Aplikasi%20Keuangan%20UMKM" target="_blank" rel="noopener noreferrer" class="btn-ghost text-sm py-3.5 px-5 font-bold shadow-xs inline-flex items-center gap-2 border-emerald-500/40 text-emerald-800 hover:bg-emerald-50">
+                <span>💬</span> Konsultasi WhatsApp
+            </a>
+            <a href="{{ route('login') }}" class="btn-ghost text-sm py-3.5 px-5 font-bold shadow-xs">
+                Masuk ke Akun
+            </a>
+        </div>
+        <div class="mt-4 flex items-center justify-center gap-4 text-xs font-semibold text-slate-500">
+            <span>✓ Tanpa Registrasi untuk Coba Demo</span>
+            <span>·</span>
+            <a href="https://github.com/bipisurel-bps/aplikasikeuanganumkmgratis" target="_blank" rel="noopener noreferrer" class="text-slate-700 hover:text-slate-950 underline underline-offset-4 font-bold inline-flex items-center gap-1">
+                Kode Sumber di GitHub ↗
             </a>
         </div>
 
@@ -121,7 +134,7 @@
                 <span class="h-3 w-3 rounded-full bg-rose-500"></span>
                 <span class="h-3 w-3 rounded-full bg-amber-500"></span>
                 <span class="h-3 w-3 rounded-full bg-emerald-500"></span>
-                <span class="ml-2 font-mono text-[11px] text-slate-400 font-bold hidden sm:inline">app.umkm.test · Pratinjau Antarmuka</span>
+                <span class="ml-2 font-mono text-[11px] text-slate-400 font-bold hidden sm:inline">demo.aplikasikeuanganumkm.web.id · Pratinjau Ruang Kerja</span>
             </div>
 
             {{-- Tab Switcher --}}
@@ -451,7 +464,7 @@
             <span class="text-slate-400">Pilih Peran dan Masuk dalam 1 Klik!</span>
         </h2>
         <p class="mx-auto mt-4 max-w-xl text-xs sm:text-sm text-slate-400 leading-relaxed">
-            Data demo 14 hari dengan 400+ transaksi sudah terpasang. Klik salah satu tombol di bawah untuk langsung mencoba tanpa perlu mengisi formulir pendaftaran.
+            Data demo 14 hari dengan 400+ transaksi terpasang dalam mode pengamat (Read-Only). Klik salah satu tombol di bawah untuk langsung mencoba tanpa perlu mengisi formulir pendaftaran.
         </p>
 
         {{-- Role Cards --}}
@@ -517,6 +530,14 @@
                     </button>
                 </form>
             </div>
+        </div>
+
+        <div class="mt-12 rounded-2xl border border-emerald-500/30 bg-emerald-950/40 p-6 max-w-2xl mx-auto text-center backdrop-blur-xs">
+            <h4 class="text-sm font-extrabold text-emerald-400">💬 Ingin Memasang Aplikasi Ini untuk Toko Anda Sendiri?</h4>
+            <p class="text-xs text-slate-300 mt-1.5 leading-relaxed">Kami siap membantu instalasi mandiri di laptop atau server toko Anda, konfigurasi printer thermal, dan pendampingan awal.</p>
+            <a href="https://wa.me/6281280000000?text=Halo%20Admin,%20saya%20ingin%20bantuan%20instalasi%20Aplikasi%20Keuangan%20UMKM" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-5 py-2.5 text-xs font-extrabold text-slate-950 hover:bg-emerald-400 transition mt-4 shadow-md">
+                Chat WhatsApp Sekarang &rarr;
+            </a>
         </div>
 
         <div class="mt-10 text-xs text-slate-500">
@@ -655,6 +676,8 @@
                 <a href="#masalah-solusi" class="hover:text-slate-950">Alur Bisnis</a>
                 <a href="#demo" class="hover:text-slate-950">Uji Coba Demo</a>
                 <a href="{{ route('login') }}" class="hover:text-slate-950">Masuk Akun</a>
+                <a href="https://github.com/bipisurel-bps/aplikasikeuanganumkmgratis" target="_blank" rel="noopener noreferrer" class="hover:text-slate-950">GitHub</a>
+                <a href="https://wa.me/6281280000000?text=Halo%20Admin,%20saya%20ingin%20konsultasi%20penggunaan%20Aplikasi%20Keuangan%20UMKM" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-700">WhatsApp</a>
             </div>
         </div>
 
@@ -669,7 +692,7 @@
             </div>
 
             <div class="text-[11px] font-mono text-slate-400">
-                &copy; {{ date('Y') }} {{ config('umkm.store_name') }} · Instalasi Contoh untuk Uji Coba Terbuka.
+                &copy; {{ date('Y') }} {{ config('umkm.store_name') }} · Sistem Akuntansi UMKM Terpadu Open Source untuk Pelaku Usaha Indonesia.
             </div>
         </div>
     </div>

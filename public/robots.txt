@@ -1,2 +1,15 @@
+# Robots.txt untuk Aplikasi Keuangan UMKM
 User-agent: *
-Disallow:
+Allow: /
+Allow: /masuk
+Disallow: /dashboard
+Disallow: /kasir
+Disallow: /shift
+Disallow: /penjualan
+Disallow: /produk
+Disallow: /supplier
+Disallow: /restock
+Disallow: /beban
+Disallow: /buku-kas
+
+Sitemap: https://aplikasikeuanganumkm.web.id/sitemap.xml
