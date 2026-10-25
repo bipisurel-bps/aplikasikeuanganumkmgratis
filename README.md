@@ -91,6 +91,8 @@ Database telah dilengkapi dengan data simulasi 14 hari dan 400+ transaksi penjua
 | **Pemilik (Owner)** | `owner@umkm.test` | `password` | Seluruh dashboard keuangan, laba rugi, kontrol anggaran, buku kas, HPP, produk & restock |
 | **Kasir Toko** | `kasir@umkm.test` | `password` | Layar POS kasir, buka/tutup shift laci kas, riwayat struk penjualan sendiri |
 
+Untuk skenario pengujian langkah-demi-langkah, alur transaksi kasir, kalkulasi HPP, dan lembar evaluasi, silakan baca **[Panduan Lengkap Uji Coba (PANDUAN_UJICOBA.md)](PANDUAN_UJICOBA.md)**.
+
 ---
 
 ## 🏛️ Arsitektur & Struktur Direktori
