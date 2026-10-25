@@ -66,34 +66,34 @@
     </div>
 
     {{-- Right Form Side --}}
-    <div class="flex items-center justify-center p-6 sm:p-10 lg:p-16">
+    <div class="flex items-center justify-center p-4 sm:p-10 lg:p-16">
         <div class="w-full max-w-md">
             {{-- Mobile Brand Logo --}}
-            <div class="mb-8 text-center lg:hidden">
-                <a href="/" class="mx-auto mb-3 flex items-center justify-center">
-                    @include('partials.logo', ['class' => 'h-14 w-14'])
+            <div class="mb-6 text-center lg:hidden">
+                <a href="/" class="mx-auto mb-2 flex items-center justify-center">
+                    @include('partials.logo', ['class' => 'h-12 w-12'])
                 </a>
-                <h1 class="text-xl font-extrabold text-slate-950">{{ config('umkm.store_name') }}</h1>
-                <p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Akses Masuk &amp; Demo Interaktif</p>
+                <h1 class="text-lg font-extrabold text-slate-950">{{ config('umkm.store_name') }}</h1>
+                <p class="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Akses Masuk &amp; Demo Interaktif</p>
             </div>
 
-            <div class="card p-8 shadow-md border-slate-200">
-                <div class="mb-6">
-                    <a href="/" class="text-xs font-bold text-amber-600 hover:text-amber-700 inline-block mb-3">&larr; Kembali ke Beranda</a>
-                    <h2 class="text-xl font-extrabold tracking-tight text-slate-950">Masuk ke Akun Anda</h2>
+            <div class="card p-5 sm:p-8 shadow-md border-slate-200">
+                <div class="mb-5 sm:mb-6">
+                    <a href="/" class="text-xs font-bold text-amber-600 hover:text-amber-700 inline-block mb-2.5">&larr; Kembali ke Beranda</a>
+                    <h2 class="text-lg sm:text-xl font-extrabold tracking-tight text-slate-950">Masuk ke Akun Anda</h2>
                     <p class="mt-1 text-xs font-medium text-slate-500">Masukkan kredensial pengguna, atau langsung coba mode demo di bawah.</p>
                 </div>
 
                 {{-- 1-Click Demo Card (Aligned with SAS concept) --}}
-                <div class="mb-6 rounded-2xl border border-amber-300 bg-amber-50/80 p-4 shadow-xs">
+                <div class="mb-5 sm:mb-6 rounded-2xl border border-amber-300 bg-amber-50/80 p-3.5 sm:p-4 shadow-xs">
                     <div class="flex items-center gap-2 font-bold text-slate-950 text-xs mb-1.5">
                         <span class="text-amber-600 text-sm">⚡</span>
                         <span>Ingin Coba Langsung Tanpa Kata Sandi?</span>
                     </div>
-                    <p class="text-xs text-slate-600 mb-3 leading-relaxed">
+                    <p class="text-[11px] sm:text-xs text-slate-600 mb-3 leading-relaxed">
                         Pilih peran pengamat demo untuk langsung menjelajahi dashboard laba bersih atau layar kasir POS:
                     </p>
-                    <div class="grid grid-cols-2 gap-2.5">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
                         <form method="POST" action="{{ route('login.demo') }}">
                             @csrf
                             <input type="hidden" name="role" value="owner">
@@ -111,7 +111,7 @@
                     </div>
                 </div>
 
-                <div class="relative flex items-center justify-center my-6">
+                <div class="relative flex items-center justify-center my-5 sm:my-6">
                     <div class="border-t border-slate-200 w-full"></div>
                     <span class="bg-white px-3 text-[10px] font-bold uppercase tracking-wider text-slate-400 absolute">Atau Masuk Akun Pribadi</span>
                 </div>
@@ -149,8 +149,8 @@
                 <div class="mt-6 border-t border-slate-100 pt-4 text-center">
                     <p class="text-xs text-slate-500">
                         Butuh bantuan setup atau konsultasi toko?
-                        <a href="https://wa.me/6281280000000?text=Halo%20Admin,%20saya%20ingin%20konsultasi%20penggunaan%20Aplikasi%20Keuangan%20UMKM" target="_blank" rel="noopener noreferrer" class="font-bold text-emerald-700 hover:underline">
-                            Chat WhatsApp 💬
+                        <a href="mailto:jaddadeveloper@gmail.com?subject=Bantuan%20Aplikasi%20Keuangan%20UMKM" class="font-bold text-amber-700 hover:underline block sm:inline mt-1 sm:mt-0">
+                            jaddadeveloper@gmail.com ✉️
                         </a>
                     </p>
                 </div>

@@ -36,16 +36,16 @@
     <aside :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'"
            class="fixed inset-y-0 left-0 z-50 flex w-68 flex-col border-r border-slate-200/90 bg-white transition-transform duration-200 lg:static lg:z-auto">
         {{-- Brand Header --}}
-        <div class="flex items-center gap-3.5 border-b border-slate-100 px-5 py-5">
-            <div class="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800 text-lg font-black text-amber-400 shadow-md ring-1 ring-white/10">
-                K
+        <div class="flex items-center gap-3 border-b border-slate-100 px-4 py-4.5">
+            <div class="relative shrink-0">
+                @include('partials.logo', ['class' => 'h-10 w-10'])
                 <span class="absolute -bottom-0.5 -right-0.5 h-2.5 w-2.5 rounded-full bg-emerald-500 ring-2 ring-white"></span>
             </div>
             <div class="min-w-0 flex-1">
-                <p class="truncate text-base font-extrabold tracking-tight text-slate-950">{{ config('umkm.store_name') }}</p>
+                <p class="truncate text-sm font-extrabold tracking-tight text-slate-950">{{ config('umkm.store_name') }}</p>
                 <div class="flex items-center gap-1.5">
                     <span class="inline-block h-1.5 w-1.5 rounded-full bg-amber-500"></span>
-                    <p class="truncate text-[11px] font-semibold tracking-wide text-slate-500">Sistem Kasir &amp; Akuntansi</p>
+                    <p class="truncate text-[10.5px] font-semibold tracking-wide text-slate-500">Sistem Kasir &amp; Akuntansi</p>
                 </div>
             </div>
         </div>
@@ -94,50 +94,57 @@
     <div class="flex min-w-0 flex-1 flex-col overflow-hidden">
         {{-- Banner Notifikasi Mode Demo (Pengamat) --}}
         @if (session('is_demo'))
-            <div class="z-40 flex flex-wrap items-center justify-between gap-3 border-b border-amber-400 bg-amber-400 px-4 py-2.5 text-xs sm:text-sm font-bold text-slate-950 shadow-xs">
-                <div class="flex items-center gap-2">
-                    <span class="flex h-2 w-2 rounded-full bg-slate-950 animate-pulse"></span>
-                    <span><strong>Mode Demo (Pengamat):</strong> Anda bebas menjelajahi laporan dan menu kasir. Perubahan data dinonaktifkan untuk menjaga kestabilan data contoh.</span>
+            <div class="z-40 flex items-center justify-between gap-2 border-b border-amber-400 bg-amber-400 px-3 sm:px-4 py-2 text-xs font-bold text-slate-950 shadow-xs">
+                <div class="flex items-center gap-2 min-w-0">
+                    <span class="flex h-2 w-2 shrink-0 rounded-full bg-slate-950 animate-pulse"></span>
+                    <span class="truncate sm:overflow-visible sm:whitespace-normal">
+                        <strong>Mode Demo:</strong> <span class="hidden sm:inline">Anda bebas menjelajahi menu. Perubahan data dinonaktifkan untuk menjaga kestabilan data contoh.</span><span class="sm:hidden">Read-Only</span>
+                    </span>
                 </div>
                 <form method="POST" action="{{ route('logout') }}" class="shrink-0">
                     @csrf
-                    <button type="submit" class="rounded-lg bg-slate-950 px-3 py-1 text-xs font-bold text-amber-400 hover:bg-slate-900 transition">
-                        Keluar Demo &rarr;
+                    <button type="submit" class="rounded-lg bg-slate-950 px-2.5 py-1 text-[11px] sm:text-xs font-extrabold text-amber-400 hover:bg-slate-900 transition">
+                        Keluar &rarr;
                     </button>
                 </form>
             </div>
         @endif
 
         {{-- Sticky Glassmorphic Topbar --}}
-        <header class="sticky top-0 z-30 flex h-16 shrink-0 items-center justify-between border-b border-slate-200/80 bg-white/90 px-4 sm:px-6 lg:px-8 backdrop-blur-md">
-            <div class="flex items-center gap-3 min-w-0">
+        <header class="sticky top-0 z-30 flex h-14 sm:h-16 shrink-0 items-center justify-between border-b border-slate-200/80 bg-white/90 px-3 sm:px-6 lg:px-8 backdrop-blur-md">
+            <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
                 <button @click="sidebarOpen = true" class="rounded-xl border border-slate-200 p-2 text-slate-600 hover:bg-slate-100 lg:hidden" aria-label="Buka Menu">
                     <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
                 </button>
 
-                <nav class="flex items-center gap-2 text-xs font-semibold text-slate-400 min-w-0" aria-label="Breadcrumb">
+                <nav class="flex items-center gap-1.5 sm:gap-2 text-xs font-semibold text-slate-400 min-w-0" aria-label="Breadcrumb">
                     <span class="hidden sm:inline hover:text-slate-600">Aplikasi Keuangan UMKM</span>
                     <span class="hidden sm:inline text-slate-300">/</span>
                     <span class="truncate font-bold text-slate-900">@yield('title')</span>
                 </nav>
             </div>
 
-            <div class="flex items-center gap-3">
+            <div class="flex items-center gap-2 sm:gap-3">
                 {{-- Shift Status Pill --}}
                 @if ($openDrawer)
-                    <a href="{{ route('drawers.index') }}" class="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-800 shadow-xs hover:bg-emerald-100 transition">
+                    <a href="{{ route('drawers.index') }}" class="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 sm:px-3 py-1 text-xs font-bold text-emerald-800 shadow-xs hover:bg-emerald-100 transition">
                         <span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
                         <span class="hidden sm:inline">Shift Kasir Aktif</span>
                         <span class="font-mono text-emerald-700">@rp($openDrawer->opening_cash)</span>
                     </a>
                 @else
-                    <a href="{{ route('drawers.index') }}" class="inline-flex items-center gap-1.5 rounded-full border border-amber-200 bg-amber-50 px-3 py-1 text-xs font-bold text-amber-800 shadow-xs hover:bg-amber-100 transition">
+                    <a href="{{ route('drawers.index') }}" class="inline-flex items-center gap-1.5 rounded-full border border-amber-200 bg-amber-50 px-2.5 sm:px-3 py-1 text-[11px] sm:text-xs font-bold text-amber-800 shadow-xs hover:bg-amber-100 transition">
                         <span class="h-2 w-2 rounded-full bg-amber-500"></span>
-                        <span>Shift Belum Dibuka</span>
+                        <span class="hidden sm:inline">Shift Belum Dibuka</span>
+                        <span class="sm:hidden">Shift Tutup</span>
                     </a>
                 @endif
 
                 <div class="hidden sm:block text-right border-l border-slate-200 pl-3">
+                    <p class="font-mono text-[11px] font-semibold text-slate-600">{{ now()->translatedFormat('l, d M Y') }}</p>
+                </div>
+            </div>
+        </header>
                     <p class="font-mono text-[11px] font-semibold text-slate-600">{{ now()->translatedFormat('l, d M Y') }}</p>
                 </div>
             </div>

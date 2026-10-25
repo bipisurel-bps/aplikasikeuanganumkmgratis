@@ -170,6 +170,21 @@
 
 [x-cloak] { display: none !important; }
 
+/* Mobile viewport hygiene & overflow protection */
+html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+/* Hide scrollbars for smooth mobile swipeable bars */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
 @media print {
     body * { visibility: hidden; }
     .print-area, .print-area * { visibility: visible; }

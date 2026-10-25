@@ -67,7 +67,7 @@
         </div>
 
         <div>
-            <label class="label">Nomor WhatsApp / Telepon</label>
+            <label class="label">Nomor Telepon / Kontak</label>
             <input name="phone" x-model="form.phone" class="input font-mono text-xs" placeholder="mis. 0812-3456-7890">
         </div>
 

@@ -14,22 +14,22 @@
 <body class="bg-[#F8FAFC] font-sans text-slate-800 antialiased selection:bg-amber-100 selection:text-amber-900">
 
 {{-- Sticky Header Navbar --}}
-<header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/85 backdrop-blur-md">
-    <div class="mx-auto flex h-18 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+<header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-md">
+    <div class="mx-auto flex h-16 sm:h-18 max-w-7xl items-center justify-between px-3.5 sm:px-6 lg:px-8">
         {{-- Brand Logo --}}
-        <a href="{{ route('landing') }}" class="flex items-center gap-3 group">
-            @include('partials.logo', ['class' => 'h-11 w-11'])
-            <div>
-                <p class="text-base font-extrabold tracking-tight text-slate-950 leading-tight">{{ config('umkm.store_name') }}</p>
+        <a href="{{ route('landing') }}" class="flex items-center gap-2.5 sm:gap-3 group min-w-0">
+            @include('partials.logo', ['class' => 'h-10 w-10 sm:h-11 sm:w-11 shrink-0'])
+            <div class="min-w-0">
+                <p class="text-sm sm:text-base font-extrabold tracking-tight text-slate-950 leading-tight truncate">{{ config('umkm.store_name') }}</p>
                 <div class="flex items-center gap-1.5">
-                    <span class="inline-block h-1.5 w-1.5 rounded-full bg-amber-500"></span>
-                    <p class="text-[11px] font-semibold text-slate-500 tracking-wide">Sistem Kasir &amp; Akuntansi Terpadu</p>
+                    <span class="inline-block h-1.5 w-1.5 rounded-full bg-amber-500 shrink-0"></span>
+                    <p class="text-[10px] sm:text-[11px] font-semibold text-slate-500 tracking-wide truncate">Sistem Kasir &amp; Akuntansi</p>
                 </div>
             </div>
         </a>
 
         {{-- Desktop Navigation Links --}}
-        <nav class="hidden md:flex items-center gap-8 text-xs font-bold text-slate-600">
+        <nav class="hidden md:flex items-center gap-7 text-xs font-bold text-slate-600">
             <a href="#fitur" class="hover:text-slate-950 transition">Fitur Utama</a>
             <a href="#masalah-solusi" class="hover:text-slate-950 transition">Alur Bisnis</a>
             <a href="#perbandingan" class="hover:text-slate-950 transition">Keunggulan</a>
@@ -38,20 +38,17 @@
         </nav>
 
         {{-- Right Actions --}}
-        <div class="flex items-center gap-3">
-            <a href="https://wa.me/6281280000000?text=Halo%20Admin,%20saya%20ingin%20konsultasi%20penggunaan%20Aplikasi%20Keuangan%20UMKM" target="_blank" rel="noopener noreferrer" class="btn-ghost text-xs py-2 px-3 font-bold inline-flex items-center gap-1.5 border-emerald-500/40 text-emerald-700 hover:bg-emerald-50">
-                <span>💬</span> WhatsApp
-            </a>
+        <div class="flex items-center gap-2 sm:gap-3 shrink-0">
             @auth
-                <a href="{{ auth()->user()->isOwner() ? route('dashboard') : route('pos') }}" class="btn-primary text-xs py-2 px-4 font-bold shadow-sm">
+                <a href="{{ auth()->user()->isOwner() ? route('dashboard') : route('pos') }}" class="btn-primary text-xs py-2 px-3 sm:px-4 font-bold shadow-xs">
                     Buka Aplikasi &rarr;
                 </a>
             @else
-                <a href="{{ route('login') }}" class="btn-ghost text-xs py-2 px-3.5 font-bold">
-                    Masuk Akun
+                <a href="{{ route('login') }}" class="btn-ghost text-xs py-1.5 sm:py-2 px-2.5 sm:px-3.5 font-bold">
+                    Masuk
                 </a>
-                <a href="#demo" class="btn-primary text-xs py-2 px-4 font-bold shadow-sm hidden sm:inline-flex">
-                    Coba Demo Gratis
+                <a href="#demo" class="btn-primary text-xs py-1.5 sm:py-2 px-3 sm:px-4 font-bold shadow-xs">
+                    Coba Demo
                 </a>
             @endauth
         </div>
@@ -59,19 +56,19 @@
 </header>
 
 {{-- Hero Section --}}
-<section class="relative overflow-hidden bg-gradient-to-b from-white via-slate-50/50 to-[#F8FAFC] pt-14 pb-20 lg:pt-20 lg:pb-28">
+<section class="relative overflow-hidden bg-gradient-to-b from-white via-slate-50/50 to-[#F8FAFC] pt-10 pb-16 sm:pt-16 sm:pb-24 lg:pt-20 lg:pb-28">
     {{-- Ambient radial background glow --}}
-    <div class="pointer-events-none absolute -top-40 left-1/2 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-gradient-to-tr from-amber-400/10 to-slate-900/5 blur-3xl"></div>
+    <div class="pointer-events-none absolute -top-40 left-1/2 h-[450px] w-[700px] -translate-x-1/2 rounded-full bg-gradient-to-tr from-amber-400/10 to-slate-900/5 blur-3xl"></div>
 
     <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
         {{-- Eyebrow badge --}}
-        <div class="inline-flex items-center gap-2 rounded-full border border-amber-300/60 bg-amber-50/80 px-4 py-1.5 text-xs font-bold text-amber-900 shadow-xs backdrop-blur-xs mb-8">
-            <span class="flex h-2 w-2 rounded-full bg-amber-500 animate-pulse"></span>
-            <span>SISTEM KASIR &amp; MANAJEMEN KEUANGAN UMKM TERPADU · OPEN SOURCE</span>
+        <div class="inline-flex items-center gap-2 rounded-full border border-amber-300/60 bg-amber-50/80 px-3 sm:px-4 py-1 text-[10.5px] sm:text-xs font-bold text-amber-900 shadow-xs backdrop-blur-xs mb-6 sm:mb-8 max-w-full text-center leading-normal">
+            <span class="flex h-2 w-2 shrink-0 rounded-full bg-amber-500 animate-pulse"></span>
+            <span>SISTEM KASIR &amp; KEUANGAN UMKM TERPADU · OPEN SOURCE</span>
         </div>
 
         {{-- Main Headline --}}
-        <h1 class="mx-auto max-w-4xl text-3xl font-black tracking-tight text-slate-950 sm:text-5xl lg:text-6xl leading-[1.12]">
+        <h1 class="mx-auto max-w-4xl text-2xl font-black tracking-tight text-slate-950 sm:text-5xl lg:text-6xl leading-[1.2] sm:leading-[1.12]">
             Bukan Sekadar Kasir POS Biasa.<br>
             <span class="bg-gradient-to-r from-slate-950 via-slate-800 to-amber-700 bg-clip-text text-transparent">
                 Ketahui Laba Bersih Riil
@@ -79,109 +76,110 @@
         </h1>
 
         {{-- Subtitle --}}
-        <p class="mx-auto mt-6 max-w-2xl text-sm sm:text-base font-medium leading-relaxed text-slate-600">
+        <p class="mx-auto mt-4 sm:mt-6 max-w-2xl text-xs sm:text-base font-medium leading-relaxed text-slate-600">
             Aplikasi kasir terpadu yang tidak hanya mencatat transaksi penjualan, tapi otomatis menghitung <strong class="text-slate-900 font-bold">HPP moving average</strong>, mengawasi <strong class="text-slate-900 font-bold">beban operasional dengan upload nota</strong>, dan mengunci selisih laci kasir.
         </p>
 
         {{-- Action Buttons --}}
-        <div class="mt-8 flex flex-wrap items-center justify-center gap-3.5">
-            <a href="#demo" class="btn-primary text-sm py-3.5 px-6 font-extrabold shadow-lg">
+        <div class="mt-7 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-2.5 sm:gap-3.5 max-w-md sm:max-w-none mx-auto">
+            <a href="#demo" class="btn-primary text-xs sm:text-sm py-3 sm:py-3.5 px-6 font-extrabold shadow-md justify-center">
                 🚀 Coba Demo 1-Klik Sekarang &rarr;
             </a>
-            <a href="https://wa.me/6281280000000?text=Halo%20Admin,%20saya%20ingin%20konsultasi%20penggunaan%20Aplikasi%20Keuangan%20UMKM" target="_blank" rel="noopener noreferrer" class="btn-ghost text-sm py-3.5 px-5 font-bold shadow-xs inline-flex items-center gap-2 border-emerald-500/40 text-emerald-800 hover:bg-emerald-50">
-                <span>💬</span> Konsultasi WhatsApp
+            <a href="mailto:jaddadeveloper@gmail.com?subject=Konsultasi%20Aplikasi%20Keuangan%20UMKM" class="btn-ghost text-xs sm:text-sm py-3 sm:py-3.5 px-5 font-bold shadow-xs inline-flex items-center justify-center gap-2 border-slate-300 text-slate-800 hover:bg-slate-50">
+                <span>✉️</span> Hubungi via Email
             </a>
-            <a href="{{ route('login') }}" class="btn-ghost text-sm py-3.5 px-5 font-bold shadow-xs">
+            <a href="{{ route('login') }}" class="btn-ghost text-xs sm:text-sm py-3 sm:py-3.5 px-5 font-bold shadow-xs justify-center">
                 Masuk ke Akun
             </a>
         </div>
-        <div class="mt-4 flex items-center justify-center gap-4 text-xs font-semibold text-slate-500">
+        <div class="mt-4 flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-[11px] sm:text-xs font-semibold text-slate-500">
             <span>✓ Tanpa Registrasi untuk Coba Demo</span>
-            <span>·</span>
+            <span class="hidden sm:inline">·</span>
             <a href="https://github.com/bipisurel-bps/aplikasikeuanganumkmgratis" target="_blank" rel="noopener noreferrer" class="text-slate-700 hover:text-slate-950 underline underline-offset-4 font-bold inline-flex items-center gap-1">
                 Kode Sumber di GitHub ↗
             </a>
         </div>
 
         {{-- Key Trust Metrics Row --}}
-        <div class="mx-auto mt-12 grid max-w-4xl grid-cols-2 gap-4 pt-8 border-t border-slate-200/80 sm:grid-cols-4 text-left">
-            <div class="p-3">
-                <p class="font-mono text-xl sm:text-2xl font-black text-slate-950">Rp 0,-</p>
-                <p class="text-xs font-semibold text-slate-500 mt-0.5">Bebas Biaya Langganan</p>
+        <div class="mx-auto mt-10 sm:mt-12 grid max-w-4xl grid-cols-2 gap-2.5 sm:gap-4 pt-6 sm:pt-8 border-t border-slate-200/80 sm:grid-cols-4 text-center sm:text-left">
+            <div class="rounded-xl border border-slate-200/70 bg-white/70 p-3 sm:p-4 shadow-xs">
+                <p class="font-mono text-lg sm:text-2xl font-black text-slate-950">Rp 0,-</p>
+                <p class="text-[11px] sm:text-xs font-semibold text-slate-500 mt-0.5">Bebas Langganan</p>
             </div>
-            <div class="p-3">
-                <p class="font-mono text-xl sm:text-2xl font-black text-slate-950">Auto HPP</p>
-                <p class="text-xs font-semibold text-slate-500 mt-0.5">Metode Moving Average</p>
+            <div class="rounded-xl border border-slate-200/70 bg-white/70 p-3 sm:p-4 shadow-xs">
+                <p class="font-mono text-lg sm:text-2xl font-black text-slate-950">Auto HPP</p>
+                <p class="text-[11px] sm:text-xs font-semibold text-slate-500 mt-0.5">Moving Average</p>
             </div>
-            <div class="p-3">
-                <p class="font-mono text-xl sm:text-2xl font-black text-slate-950">Real-Time</p>
-                <p class="text-xs font-semibold text-slate-500 mt-0.5">Jurnal Arus Kas Otomatis</p>
+            <div class="rounded-xl border border-slate-200/70 bg-white/70 p-3 sm:p-4 shadow-xs">
+                <p class="font-mono text-lg sm:text-2xl font-black text-slate-950">Real-Time</p>
+                <p class="text-[11px] sm:text-xs font-semibold text-slate-500 mt-0.5">Jurnal Kas Otomatis</p>
             </div>
-            <div class="p-3">
-                <p class="font-mono text-xl sm:text-2xl font-black text-slate-950">100%</p>
-                <p class="text-xs font-semibold text-slate-500 mt-0.5">Karya &amp; Data Milik Anda</p>
+            <div class="rounded-xl border border-slate-200/70 bg-white/70 p-3 sm:p-4 shadow-xs">
+                <p class="font-mono text-lg sm:text-2xl font-black text-slate-950">100%</p>
+                <p class="text-[11px] sm:text-xs font-semibold text-slate-500 mt-0.5">Data Milik Anda</p>
             </div>
         </div>
     </div>
+</section>
 </section>
 
 {{-- Interactive Software Showcase Window (Mockup) --}}
 <section class="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 -mt-6 mb-24" x-data="{ tab: 'dashboard' }">
     <div class="card overflow-hidden rounded-2xl border-slate-300 shadow-2xl bg-slate-950 text-white">
         {{-- Window Control Bar --}}
-        <div class="flex items-center justify-between border-b border-slate-800 bg-slate-900/90 px-4 py-3">
-            <div class="flex items-center gap-2">
-                <span class="h-3 w-3 rounded-full bg-rose-500"></span>
-                <span class="h-3 w-3 rounded-full bg-amber-500"></span>
-                <span class="h-3 w-3 rounded-full bg-emerald-500"></span>
-                <span class="ml-2 font-mono text-[11px] text-slate-400 font-bold hidden sm:inline">demo.aplikasikeuanganumkm.web.id · Pratinjau Ruang Kerja</span>
+        <div class="flex items-center justify-between border-b border-slate-800 bg-slate-900/90 px-3 sm:px-4 py-2.5 sm:py-3">
+            <div class="flex items-center gap-1.5 sm:gap-2">
+                <span class="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-rose-500"></span>
+                <span class="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-amber-500"></span>
+                <span class="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-emerald-500"></span>
+                <span class="ml-1.5 font-mono text-[10px] sm:text-[11px] text-slate-400 font-bold hidden sm:inline">demo.aplikasikeuanganumkm.web.id · Pratinjau Ruang Kerja</span>
             </div>
 
             {{-- Tab Switcher --}}
-            <div class="flex items-center gap-1.5 bg-slate-950 p-1 rounded-xl border border-slate-800">
-                <button @click="tab = 'dashboard'" :class="tab === 'dashboard' ? 'bg-amber-400 text-slate-950 font-black' : 'text-slate-400 hover:text-white'" class="rounded-lg px-3 py-1 text-xs font-bold transition">
-                    Dashboard Laba Bersih
+            <div class="flex items-center gap-1 bg-slate-950 p-1 rounded-xl border border-slate-800">
+                <button @click="tab = 'dashboard'" :class="tab === 'dashboard' ? 'bg-amber-400 text-slate-950 font-black' : 'text-slate-400 hover:text-white'" class="rounded-lg px-2.5 sm:px-3 py-1 text-[11px] sm:text-xs font-bold transition">
+                    Dashboard Laba
                 </button>
-                <button @click="tab = 'pos'" :class="tab === 'pos' ? 'bg-amber-400 text-slate-950 font-black' : 'text-slate-400 hover:text-white'" class="rounded-lg px-3 py-1 text-xs font-bold transition">
-                    Layar Kasir (POS)
+                <button @click="tab = 'pos'" :class="tab === 'pos' ? 'bg-amber-400 text-slate-950 font-black' : 'text-slate-400 hover:text-white'" class="rounded-lg px-2.5 sm:px-3 py-1 text-[11px] sm:text-xs font-bold transition">
+                    Layar Kasir
                 </button>
             </div>
         </div>
 
         {{-- Tab Content 1: Dashboard --}}
-        <div x-show="tab === 'dashboard'" class="p-6 sm:p-8 bg-slate-900 space-y-6">
-            <div class="grid grid-cols-2 gap-4 lg:grid-cols-4">
-                <div class="rounded-xl border border-slate-800 bg-slate-950/70 p-4">
+        <div x-show="tab === 'dashboard'" class="p-4 sm:p-6 lg:p-8 bg-slate-900 space-y-4 sm:space-y-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+                <div class="rounded-xl border border-slate-800 bg-slate-950/70 p-3.5 sm:p-4">
                     <p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Total Omzet</p>
-                    <p class="font-mono text-xl sm:text-2xl font-black text-white mt-1">Rp 42.738.600</p>
-                    <p class="text-[11px] text-slate-500 mt-1">418 Transaksi Berhasil</p>
+                    <p class="font-mono text-lg sm:text-2xl font-black text-white mt-1">Rp 42.738.600</p>
+                    <p class="text-[10.5px] sm:text-[11px] text-slate-500 mt-1">418 Transaksi Berhasil</p>
                 </div>
-                <div class="rounded-xl border border-slate-800 bg-slate-950/70 p-4">
+                <div class="rounded-xl border border-slate-800 bg-slate-950/70 p-3.5 sm:p-4">
                     <p class="text-[10px] font-bold text-amber-400 uppercase tracking-wider">HPP (Modal Barang)</p>
-                    <p class="font-mono text-xl sm:text-2xl font-black text-amber-400 mt-1">Rp 33.314.801</p>
-                    <p class="text-[11px] text-slate-500 mt-1">Laba Kotor: Rp 9.423.799</p>
+                    <p class="font-mono text-lg sm:text-2xl font-black text-amber-400 mt-1">Rp 33.314.801</p>
+                    <p class="text-[10.5px] sm:text-[11px] text-slate-500 mt-1">Laba Kotor: Rp 9.423.799</p>
                 </div>
-                <div class="rounded-xl border border-slate-800 bg-slate-950/70 p-4">
+                <div class="rounded-xl border border-slate-800 bg-slate-950/70 p-3.5 sm:p-4">
                     <p class="text-[10px] font-bold text-rose-400 uppercase tracking-wider">Beban Operasional</p>
-                    <p class="font-mono text-xl sm:text-2xl font-black text-rose-400 mt-1">Rp 6.080.000</p>
-                    <p class="text-[11px] text-slate-500 mt-1">Sewa, Listrik, Gaji Kasir</p>
+                    <p class="font-mono text-lg sm:text-2xl font-black text-rose-400 mt-1">Rp 6.080.000</p>
+                    <p class="text-[10.5px] sm:text-[11px] text-slate-500 mt-1">Sewa, Listrik, Gaji Kasir</p>
                 </div>
-                <div class="rounded-xl border border-amber-400/40 bg-gradient-to-br from-amber-950/40 via-slate-950 to-slate-950 p-4 ring-1 ring-amber-400/30">
+                <div class="rounded-xl border border-amber-400/40 bg-gradient-to-br from-amber-950/40 via-slate-950 to-slate-950 p-3.5 sm:p-4 ring-1 ring-amber-400/30">
                     <div class="flex items-center justify-between">
                         <p class="text-[10px] font-black text-amber-300 uppercase tracking-wider">Laba Bersih Riil</p>
-                        <span class="rounded bg-amber-400/20 px-1.5 py-0.5 font-mono text-[10px] font-bold text-amber-300">7.8% Net</span>
+                        <span class="rounded bg-amber-400/20 px-1.5 py-0.5 font-mono text-[9.5px] sm:text-[10px] font-bold text-amber-300">7.8% Net</span>
                     </div>
-                    <p class="font-mono text-xl sm:text-2xl font-black text-amber-300 mt-1">Rp 3.343.799</p>
-                    <p class="text-[11px] text-slate-400 mt-1">Uang untung riil Anda</p>
+                    <p class="font-mono text-lg sm:text-2xl font-black text-amber-300 mt-1">Rp 3.343.799</p>
+                    <p class="text-[10.5px] sm:text-[11px] text-slate-400 mt-1">Uang untung riil Anda</p>
                 </div>
             </div>
 
-            <div class="rounded-xl border border-slate-800 bg-slate-950/50 p-5">
-                <div class="flex items-center justify-between mb-4">
-                    <span class="text-xs font-bold text-slate-300 uppercase tracking-wider">Grafik Pergerakan Omzet Harian</span>
-                    <span class="font-mono text-xs text-amber-400">Puncak: Rp 3.850.000 / hari</span>
+            <div class="rounded-xl border border-slate-800 bg-slate-950/50 p-4 sm:p-5">
+                <div class="flex items-center justify-between mb-3 sm:mb-4">
+                    <span class="text-[11px] sm:text-xs font-bold text-slate-300 uppercase tracking-wider">Grafik Pergerakan Omzet Harian</span>
+                    <span class="font-mono text-[11px] sm:text-xs text-amber-400">Puncak: Rp 3.850.000 / hari</span>
                 </div>
-                <div class="flex h-32 items-end gap-1.5 overflow-x-auto border-b border-slate-800 pb-2">
+                <div class="flex h-28 sm:h-32 items-end gap-1.5 overflow-x-auto border-b border-slate-800 pb-2">
                     <div class="flex-1 bg-slate-800 rounded-t h-[40%] hover:bg-amber-400 transition"></div>
                     <div class="flex-1 bg-slate-800 rounded-t h-[65%] hover:bg-amber-400 transition"></div>
                     <div class="flex-1 bg-slate-800 rounded-t h-[50%] hover:bg-amber-400 transition"></div>
@@ -197,35 +195,35 @@
         </div>
 
         {{-- Tab Content 2: POS Screen --}}
-        <div x-show="tab === 'pos'" class="p-6 sm:p-8 bg-slate-900" style="display: none;">
-            <div class="grid gap-6 lg:grid-cols-[1fr_320px]">
-                <div class="space-y-4">
-                    <div class="flex items-center justify-between rounded-xl border border-slate-800 bg-slate-950 p-3">
-                        <span class="text-xs font-mono text-slate-400">Scan SKU / Barcode Produk: <b>MNM-001</b></span>
-                        <span class="rounded bg-slate-800 px-2 py-0.5 font-mono text-[10px] text-amber-400 font-bold">READY</span>
+        <div x-show="tab === 'pos'" class="p-4 sm:p-6 lg:p-8 bg-slate-900" style="display: none;">
+            <div class="grid gap-4 sm:gap-6 lg:grid-cols-[1fr_320px]">
+                <div class="space-y-3.5 sm:space-y-4">
+                    <div class="flex items-center justify-between rounded-xl border border-slate-800 bg-slate-950 p-2.5 sm:p-3">
+                        <span class="text-[11px] sm:text-xs font-mono text-slate-400 truncate">Scan SKU / Barcode: <b>MNM-001</b></span>
+                        <span class="rounded bg-slate-800 px-2 py-0.5 font-mono text-[10px] text-amber-400 font-bold shrink-0">READY</span>
                     </div>
 
-                    <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
-                        <div class="rounded-xl border border-slate-800 bg-slate-950 p-3">
+                    <div class="grid grid-cols-2 gap-2.5 sm:grid-cols-3">
+                        <div class="rounded-xl border border-slate-800 bg-slate-950 p-2.5 sm:p-3">
                             <span class="text-[10px] font-mono text-slate-500">MNM-001</span>
-                            <p class="font-bold text-xs text-white mt-1">Air Mineral 600ml</p>
-                            <p class="font-mono text-xs font-black text-amber-400 mt-2">Rp 3.500</p>
+                            <p class="font-bold text-xs text-white mt-1 truncate">Air Mineral 600ml</p>
+                            <p class="font-mono text-xs font-black text-amber-400 mt-1.5">Rp 3.500</p>
                         </div>
-                        <div class="rounded-xl border border-slate-800 bg-slate-950 p-3">
+                        <div class="rounded-xl border border-slate-800 bg-slate-950 p-2.5 sm:p-3">
                             <span class="text-[10px] font-mono text-slate-500">SMB-001</span>
-                            <p class="font-bold text-xs text-white mt-1">Beras Premium 5kg</p>
-                            <p class="font-mono text-xs font-black text-amber-400 mt-2">Rp 76.000</p>
+                            <p class="font-bold text-xs text-white mt-1 truncate">Beras Premium 5kg</p>
+                            <p class="font-mono text-xs font-black text-amber-400 mt-1.5">Rp 76.000</p>
                         </div>
-                        <div class="rounded-xl border border-slate-800 bg-slate-950 p-3">
+                        <div class="rounded-xl border border-slate-800 bg-slate-950 p-2.5 sm:p-3 col-span-2 sm:col-span-1">
                             <span class="text-[10px] font-mono text-slate-500">SMB-002</span>
-                            <p class="font-bold text-xs text-white mt-1">Minyak Goreng 1L</p>
-                            <p class="font-mono text-xs font-black text-amber-400 mt-2">Rp 18.500</p>
+                            <p class="font-bold text-xs text-white mt-1 truncate">Minyak Goreng 1L</p>
+                            <p class="font-mono text-xs font-black text-amber-400 mt-1.5">Rp 18.500</p>
                         </div>
                     </div>
                 </div>
 
                 {{-- Cart Mockup --}}
-                <div class="rounded-xl border border-slate-800 bg-slate-950 p-4 space-y-3">
+                <div class="rounded-xl border border-slate-800 bg-slate-950 p-3.5 sm:p-4 space-y-2.5 sm:space-y-3">
                     <div class="flex items-center justify-between border-b border-slate-800 pb-2">
                         <span class="text-xs font-bold text-white">Keranjang Kasir</span>
                         <span class="rounded bg-slate-800 px-1.5 py-0.5 font-mono text-[10px] text-slate-300">2 Item</span>
@@ -237,7 +235,7 @@
                     <div class="border-t border-dashed border-slate-800 pt-2 flex justify-between text-sm font-black text-white">
                         <span>TOTAL</span><span class="text-amber-400 font-mono">Rp 83.000</span>
                     </div>
-                    <div class="rounded-lg bg-emerald-950/60 border border-emerald-800/80 p-2 text-center text-xs font-bold text-emerald-400">
+                    <div class="rounded-lg bg-emerald-950/60 border border-emerald-800/80 p-2 text-center text-[11px] sm:text-xs font-bold text-emerald-400">
                         Bayar Tunai Rp 100.000 · Kembali Rp 17.000
                     </div>
                 </div>
@@ -532,31 +530,42 @@
             </div>
         </div>
 
-        <div class="mt-12 rounded-2xl border border-emerald-500/30 bg-emerald-950/40 p-6 max-w-2xl mx-auto text-center backdrop-blur-xs">
-            <h4 class="text-sm font-extrabold text-emerald-400">💬 Ingin Memasang Aplikasi Ini untuk Toko Anda Sendiri?</h4>
-            <p class="text-xs text-slate-300 mt-1.5 leading-relaxed">Kami siap membantu instalasi mandiri di laptop atau server toko Anda, konfigurasi printer thermal, dan pendampingan awal.</p>
-            <a href="https://wa.me/6281280000000?text=Halo%20Admin,%20saya%20ingin%20bantuan%20instalasi%20Aplikasi%20Keuangan%20UMKM" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-5 py-2.5 text-xs font-extrabold text-slate-950 hover:bg-emerald-400 transition mt-4 shadow-md">
-                Chat WhatsApp Sekarang &rarr;
-            </a>
+        <div class="mt-10 sm:mt-12 rounded-2xl border border-slate-800 bg-slate-900/95 p-6 sm:p-8 max-w-2xl mx-auto text-center shadow-xl">
+            <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-400/10 text-amber-400 border border-amber-400/20 mb-3.5">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <h4 class="text-base sm:text-lg font-extrabold text-white">Ingin Memasang Aplikasi Ini untuk Toko Anda Sendiri?</h4>
+            <p class="text-xs sm:text-sm text-slate-300 mt-2 leading-relaxed max-w-lg mx-auto">
+                Tersedia panduan instalasi mandiri di laptop atau server toko, konfigurasi printer nota thermal, serta konsultasi teknis. Silakan hubungi pengembang melalui email:
+            </p>
+            <div class="mt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
+                <a href="mailto:jaddadeveloper@gmail.com?subject=Konsultasi%20Instalasi%20Aplikasi%20Keuangan%20UMKM" class="inline-flex items-center justify-center gap-2 rounded-xl bg-amber-400 px-6 py-3 text-xs sm:text-sm font-extrabold text-slate-950 hover:bg-amber-300 transition shadow-md w-full sm:w-auto">
+                    <span>✉️</span> Hubungi: jaddadeveloper@gmail.com
+                </a>
+            </div>
         </div>
 
-        <div class="mt-10 text-xs text-slate-500">
+        <div class="mt-8 sm:mt-10 text-xs text-slate-500">
             Sudah memiliki akun terdaftar sendiri? <a href="{{ route('login') }}" class="text-amber-400 font-bold hover:underline">Masuk lewat halaman login &rarr;</a>
         </div>
     </div>
 </section>
 
 {{-- Tabel Perbandingan --}}
-<section id="perbandingan" class="py-20 bg-white border-t border-slate-200/80">
+<section id="perbandingan" class="py-12 sm:py-20 bg-white border-t border-slate-200/80">
     <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-14">
+        <div class="text-center mb-8 sm:mb-14">
             <span class="text-xs font-extrabold uppercase tracking-wider text-amber-600">Mengapa Aplikasi Ini Berbeda?</span>
-            <h2 class="text-3xl font-black tracking-tight text-slate-950 sm:text-4xl mt-2">
+            <h2 class="text-2xl sm:text-4xl font-black tracking-tight text-slate-950 mt-2">
                 Perbandingan dengan Solusi Lain di Pasaran
             </h2>
         </div>
 
         <div class="card overflow-hidden border-slate-200">
+            <div class="px-4 py-2 text-[11px] font-semibold text-slate-500 bg-slate-50 border-b border-slate-100 sm:hidden flex items-center justify-between">
+                <span>Tabel Perbandingan Fitur</span>
+                <span class="text-amber-700 font-bold">Geser tabel &rarr;</span>
+            </div>
             <div class="overflow-x-auto">
                 <table class="min-w-full divide-y divide-slate-100 text-xs">
                     <thead>
@@ -606,52 +615,52 @@
 </section>
 
 {{-- FAQ Section --}}
-<section id="faq" class="py-20 bg-[#F8FAFC] border-t border-slate-200/80">
+<section id="faq" class="py-12 sm:py-20 bg-[#F8FAFC] border-t border-slate-200/80">
     <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-14">
+        <div class="text-center mb-8 sm:mb-14">
             <span class="text-xs font-extrabold uppercase tracking-wider text-amber-600">Pertanyaan yang Sering Diajukan</span>
-            <h2 class="text-3xl font-black tracking-tight text-slate-950 sm:text-4xl mt-2">
+            <h2 class="text-2xl sm:text-4xl font-black tracking-tight text-slate-950 mt-2">
                 Frequently Asked Questions (FAQ)
             </h2>
         </div>
 
-        <div class="space-y-4" x-data="{ active: null }">
-            <div class="card p-5 border-slate-200 cursor-pointer" @click="active = (active === 1 ? null : 1)">
-                <div class="flex items-center justify-between font-bold text-sm text-slate-950">
+        <div class="space-y-3.5 sm:space-y-4" x-data="{ active: null }">
+            <div class="card p-4 sm:p-5 border-slate-200 cursor-pointer" @click="active = (active === 1 ? null : 1)">
+                <div class="flex items-center justify-between font-bold text-xs sm:text-sm text-slate-950">
                     <span>Apakah aplikasi ini bisa dijalankan di HP atau tablet biasa?</span>
-                    <span class="text-slate-400" x-text="active === 1 ? '−' : '+'"></span>
+                    <span class="text-slate-400 text-base font-mono" x-text="active === 1 ? '−' : '+'"></span>
                 </div>
-                <div x-show="active === 1" class="mt-3 text-xs text-slate-600 leading-relaxed border-t border-slate-100 pt-3" style="display: none;">
+                <div x-show="active === 1" class="mt-2.5 text-xs text-slate-600 leading-relaxed border-t border-slate-100 pt-2.5" style="display: none;">
                     Bisa sekali! Seluruh antarmuka kasir dan laporan keuangan telah dioptimasi dengan desain mobile-first yang sangat nyaman digunakan pada layar sentuh ponsel Android, tablet, iPad, maupun laptop.
                 </div>
             </div>
 
-            <div class="card p-5 border-slate-200 cursor-pointer" @click="active = (active === 2 ? null : 2)">
-                <div class="flex items-center justify-between font-bold text-sm text-slate-950">
+            <div class="card p-4 sm:p-5 border-slate-200 cursor-pointer" @click="active = (active === 2 ? null : 2)">
+                <div class="flex items-center justify-between font-bold text-xs sm:text-sm text-slate-950">
                     <span>Bagaimana cara kerja perhitungan HPP Moving Average?</span>
-                    <span class="text-slate-400" x-text="active === 2 ? '−' : '+'"></span>
+                    <span class="text-slate-400 text-base font-mono" x-text="active === 2 ? '−' : '+'"></span>
                 </div>
-                <div x-show="active === 2" class="mt-3 text-xs text-slate-600 leading-relaxed border-t border-slate-100 pt-3" style="display: none;">
+                <div x-show="active === 2" class="mt-2.5 text-xs text-slate-600 leading-relaxed border-t border-slate-100 pt-2.5" style="display: none;">
                     Setiap kali Anda mencatat pembelian restock dari supplier, sistem akan mengalikan stok sisa lama dengan harga pokok lama, lalu menambahkannya dengan belanjaan baru, dan membaginya dengan total stok keseluruhan. Dengan cara ini, harga modal produk Anda selalu adil dan akurat meskipun harga di pasar sering berfluktuasi.
                 </div>
             </div>
 
-            <div class="card p-5 border-slate-200 cursor-pointer" @click="active = (active === 3 ? null : 3)">
-                <div class="flex items-center justify-between font-bold text-sm text-slate-950">
+            <div class="card p-4 sm:p-5 border-slate-200 cursor-pointer" @click="active = (active === 3 ? null : 3)">
+                <div class="flex items-center justify-between font-bold text-xs sm:text-sm text-slate-950">
                     <span>Apakah data transaksi toko saya tersimpan aman dan privat?</span>
-                    <span class="text-slate-400" x-text="active === 3 ? '−' : '+'"></span>
+                    <span class="text-slate-400 text-base font-mono" x-text="active === 3 ? '−' : '+'"></span>
                 </div>
-                <div x-show="active === 3" class="mt-3 text-xs text-slate-600 leading-relaxed border-t border-slate-100 pt-3" style="display: none;">
+                <div x-show="active === 3" class="mt-2.5 text-xs text-slate-600 leading-relaxed border-t border-slate-100 pt-2.5" style="display: none;">
                     Sangat aman. Aplikasi ini bersifat *self-hosted* dan mandiri. Seluruh database, foto nota, dan riwayat omzet toko berada 100% di server atau perangkat Anda sendiri, tanpa ada pihak ketiga yang bisa melihat atau mengambil data rahasia bisnis Anda.
                 </div>
             </div>
 
-            <div class="card p-5 border-slate-200 cursor-pointer" @click="active = (active === 4 ? null : 4)">
-                <div class="flex items-center justify-between font-bold text-sm text-slate-950">
+            <div class="card p-4 sm:p-5 border-slate-200 cursor-pointer" @click="active = (active === 4 ? null : 4)">
+                <div class="flex items-center justify-between font-bold text-xs sm:text-sm text-slate-950">
                     <span>Apakah ada batasan jumlah produk atau transaksi?</span>
-                    <span class="text-slate-400" x-text="active === 4 ? '−' : '+'"></span>
+                    <span class="text-slate-400 text-base font-mono" x-text="active === 4 ? '−' : '+'"></span>
                 </div>
-                <div x-show="active === 4" class="mt-3 text-xs text-slate-600 leading-relaxed border-t border-slate-100 pt-3" style="display: none;">
+                <div x-show="active === 4" class="mt-2.5 text-xs text-slate-600 leading-relaxed border-t border-slate-100 pt-2.5" style="display: none;">
                     Tidak ada batasan sama sekali (unlimited). Anda bebas memasukkan ribuan produk, mencatat puluhan ribu transaksi, dan mengunggah nota sebanyak kapasitas memori server Anda.
                 </div>
             </div>
@@ -660,28 +669,28 @@
 </section>
 
 {{-- Footer with Developer Credit --}}
-<footer class="border-t border-slate-200 bg-white py-14 text-xs text-slate-600">
+<footer class="border-t border-slate-200 bg-white py-10 sm:py-14 text-xs text-slate-600">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-100">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-5 sm:gap-6 pb-6 sm:pb-8 border-b border-slate-100 text-center md:text-left">
             <div class="flex items-center gap-3">
-                @include('partials.logo', ['class' => 'h-10 w-10'])
+                @include('partials.logo', ['class' => 'h-9 w-9 sm:h-10 sm:w-10'])
                 <div>
                     <p class="font-extrabold text-sm text-slate-950">{{ config('umkm.store_name') }}</p>
                     <p class="text-[11px] text-slate-500">Sistem Kasir &amp; Manajemen Keuangan UMKM Terpadu</p>
                 </div>
             </div>
 
-            <div class="flex flex-wrap items-center gap-6 font-bold text-slate-700">
+            <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-6 font-bold text-slate-700">
                 <a href="#fitur" class="hover:text-slate-950">Fitur Utama</a>
                 <a href="#masalah-solusi" class="hover:text-slate-950">Alur Bisnis</a>
                 <a href="#demo" class="hover:text-slate-950">Uji Coba Demo</a>
                 <a href="{{ route('login') }}" class="hover:text-slate-950">Masuk Akun</a>
                 <a href="https://github.com/bipisurel-bps/aplikasikeuanganumkmgratis" target="_blank" rel="noopener noreferrer" class="hover:text-slate-950">GitHub</a>
-                <a href="https://wa.me/6281280000000?text=Halo%20Admin,%20saya%20ingin%20konsultasi%20penggunaan%20Aplikasi%20Keuangan%20UMKM" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-700">WhatsApp</a>
+                <a href="mailto:jaddadeveloper@gmail.com" class="hover:text-amber-700">Email Pengembang</a>
             </div>
         </div>
 
-        <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+        <div class="pt-6 sm:pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
             <div>
                 <p class="text-slate-700">
                     Dikembangkan oleh <strong class="font-bold text-slate-950">bipi (jaddadeveloper)</strong> untuk kemanfaatan bersama seluas-luasnya.
