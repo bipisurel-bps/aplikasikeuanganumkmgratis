@@ -19,6 +19,18 @@ Route::get('/', function () {
     return view('landing');
 })->name('landing');
 
+// Unduh Panduan Uji Coba Resmi (Word .docx)
+Route::get('/download/panduan-uji-coba.docx', function () {
+    $filePath = public_path('Panduan_Ujicoba_Aplikasi_Keuangan_UMKM.docx');
+    if (!file_exists($filePath)) {
+        abort(404, 'Dokumen panduan belum tersedia.');
+    }
+    return response()->download($filePath, 'Panduan_Ujicoba_Aplikasi_Keuangan_UMKM.docx', [
+        'Content-Type' => 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+    ]);
+})->name('download.guide');
+
+
 // Autentikasi Pengguna & Demo 1-Klik
 Route::redirect('/login', '/masuk');
 Route::middleware('guest')->group(function () {

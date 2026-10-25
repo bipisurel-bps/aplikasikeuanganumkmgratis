@@ -29,11 +29,15 @@
         </a>
 
         {{-- Desktop Navigation Links --}}
-        <nav class="hidden md:flex items-center gap-7 text-xs font-bold text-slate-600">
+        <nav class="hidden md:flex items-center gap-6 text-xs font-bold text-slate-600">
             <a href="#fitur" class="hover:text-slate-950 transition">Fitur Utama</a>
             <a href="#masalah-solusi" class="hover:text-slate-950 transition">Alur Bisnis</a>
             <a href="#perbandingan" class="hover:text-slate-950 transition">Keunggulan</a>
             <a href="#demo" class="hover:text-slate-950 transition">Coba Demo</a>
+            <a href="{{ route('download.guide') }}" class="inline-flex items-center gap-1 text-slate-700 hover:text-amber-800 transition font-bold">
+                <span>Panduan Uji Coba</span>
+                <span class="text-[9.5px] font-mono bg-amber-100 text-amber-900 px-1 py-0.5 rounded font-black">DOCX</span>
+            </a>
             <a href="#faq" class="hover:text-slate-950 transition">FAQ</a>
         </nav>
 
@@ -94,6 +98,10 @@
         </div>
         <div class="mt-4 flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-[11px] sm:text-xs font-semibold text-slate-500">
             <span>✓ Tanpa Registrasi untuk Coba Demo</span>
+            <span class="hidden sm:inline">·</span>
+            <a href="{{ route('download.guide') }}" class="text-slate-800 hover:text-amber-800 underline underline-offset-4 font-bold inline-flex items-center gap-1 transition">
+                <span>📥 Unduh Panduan Uji Coba (.docx) ↓</span>
+            </a>
             <span class="hidden sm:inline">·</span>
             <a href="https://github.com/bipisurel-bps/aplikasikeuanganumkmgratis" target="_blank" rel="noopener noreferrer" class="text-slate-700 hover:text-slate-950 underline underline-offset-4 font-bold inline-flex items-center gap-1">
                 Kode Sumber di GitHub ↗
@@ -465,8 +473,25 @@
             Data demo 14 hari dengan 400+ transaksi terpasang dalam mode pengamat (Read-Only). Klik salah satu tombol di bawah untuk langsung mencoba tanpa perlu mengisi formulir pendaftaran.
         </p>
 
+        {{-- Callout Panduan Uji Coba (Word .docx) --}}
+        <div class="mt-7 inline-flex flex-col sm:flex-row items-center justify-between gap-3.5 rounded-2xl border border-slate-800 bg-slate-900/90 px-4 sm:px-6 py-3.5 max-w-2xl mx-auto text-left shadow-lg">
+            <div class="flex items-center gap-3">
+                <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-400/10 text-amber-400 border border-amber-400/20 text-lg">
+                    📋
+                </span>
+                <div>
+                    <p class="text-xs sm:text-sm font-extrabold text-white">Ingin menguji fitur secara terarah &amp; bertahap?</p>
+                    <p class="text-[11px] sm:text-xs text-slate-400 mt-0.5">Tersedia dokumen resmi berisi 8 skenario pengujian &amp; lembar evaluasi toko.</p>
+                </div>
+            </div>
+            <a href="{{ route('download.guide') }}" class="shrink-0 inline-flex items-center gap-2 rounded-xl bg-amber-400 px-4 py-2 text-xs font-extrabold text-slate-950 hover:bg-amber-300 transition shadow-xs w-full sm:w-auto justify-center">
+                <span>Unduh Word (.docx)</span>
+                <span>↓</span>
+            </a>
+        </div>
+
         {{-- Role Cards --}}
-        <div class="mt-12 grid gap-6 md:grid-cols-2 max-w-4xl mx-auto text-left">
+        <div class="mt-8 sm:mt-10 grid gap-6 md:grid-cols-2 max-w-4xl mx-auto text-left">
             {{-- Card Owner --}}
             <div class="rounded-2xl border border-slate-800 bg-slate-900/90 p-7 hover:border-amber-400/50 transition-all duration-200 flex flex-col justify-between shadow-xl">
                 <div>
@@ -684,6 +709,7 @@
                 <a href="#fitur" class="hover:text-slate-950">Fitur Utama</a>
                 <a href="#masalah-solusi" class="hover:text-slate-950">Alur Bisnis</a>
                 <a href="#demo" class="hover:text-slate-950">Uji Coba Demo</a>
+                <a href="{{ route('download.guide') }}" class="hover:text-amber-700 text-slate-900 font-extrabold">Panduan Uji Coba (Word) ↓</a>
                 <a href="{{ route('login') }}" class="hover:text-slate-950">Masuk Akun</a>
                 <a href="https://github.com/bipisurel-bps/aplikasikeuanganumkmgratis" target="_blank" rel="noopener noreferrer" class="hover:text-slate-950">GitHub</a>
                 <a href="mailto:jaddadeveloper@gmail.com" class="hover:text-amber-700">Email Pengembang</a>
