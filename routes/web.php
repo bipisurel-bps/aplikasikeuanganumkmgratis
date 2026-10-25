@@ -20,6 +20,7 @@ Route::get('/', function () {
 })->name('landing');
 
 // Autentikasi Pengguna & Demo 1-Klik
+Route::redirect('/login', '/masuk');
 Route::middleware('guest')->group(function () {
     Route::get('/masuk', [AuthController::class, 'showLogin'])->name('login');
     Route::post('/masuk', [AuthController::class, 'login'])->middleware('throttle:10,1')->name('login.attempt');
