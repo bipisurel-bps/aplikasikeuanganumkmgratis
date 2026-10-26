@@ -30,6 +30,9 @@
 
         {{-- Desktop Navigation Links --}}
         <nav class="hidden md:flex items-center gap-6 text-xs font-bold text-slate-600">
+            <a href="#video-panduan" class="hover:text-slate-950 transition flex items-center gap-1 font-extrabold text-amber-700">
+                <span>▶</span> Video Panduan
+            </a>
             <a href="#fitur" class="hover:text-slate-950 transition">Fitur Utama</a>
             <a href="#masalah-solusi" class="hover:text-slate-950 transition">Alur Bisnis</a>
             <a href="#perbandingan" class="hover:text-slate-950 transition">Keunggulan</a>
@@ -89,11 +92,14 @@
             <a href="#demo" class="btn-primary text-xs sm:text-sm py-3 sm:py-3.5 px-6 font-extrabold shadow-md justify-center">
                 🚀 Coba Demo 1-Klik Sekarang &rarr;
             </a>
+            <a href="#video-panduan" class="btn-ghost text-xs sm:text-sm py-3 sm:py-3.5 px-5 font-bold shadow-xs inline-flex items-center justify-center gap-2 border-amber-300/80 bg-amber-50/70 text-amber-950 hover:bg-amber-100 transition">
+                <span class="text-amber-600 font-black text-sm">▶</span> Tonton Video Panduan (84s)
+            </a>
             <a href="mailto:jaddadeveloper@gmail.com?subject=Konsultasi%20Aplikasi%20Keuangan%20UMKM" class="btn-ghost text-xs sm:text-sm py-3 sm:py-3.5 px-5 font-bold shadow-xs inline-flex items-center justify-center gap-2 border-slate-300 text-slate-800 hover:bg-slate-50">
                 <span>✉️</span> Hubungi via Email
             </a>
             <a href="{{ route('login') }}" class="btn-ghost text-xs sm:text-sm py-3 sm:py-3.5 px-5 font-bold shadow-xs justify-center">
-                Masuk ke Akun
+                Masuk
             </a>
         </div>
         <div class="mt-4 flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-[11px] sm:text-xs font-semibold text-slate-500">
@@ -129,22 +135,24 @@
         </div>
     </div>
 </section>
-</section>
 
-{{-- Interactive Software Showcase Window (Mockup) --}}
-<section class="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 -mt-6 mb-24" x-data="{ tab: 'dashboard' }">
-    <div class="card overflow-hidden rounded-2xl border-slate-300 shadow-2xl bg-slate-950 text-white">
+{{-- Interactive Software Showcase Window (Mockup & Video) --}}
+<section id="video-panduan" class="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 -mt-6 mb-24" x-data="{ tab: 'video' }">
+    <div class="card overflow-hidden rounded-2xl border-slate-300 shadow-2xl bg-slate-950 text-white ring-1 ring-white/10">
         {{-- Window Control Bar --}}
         <div class="flex items-center justify-between border-b border-slate-800 bg-slate-900/90 px-3 sm:px-4 py-2.5 sm:py-3">
             <div class="flex items-center gap-1.5 sm:gap-2">
                 <span class="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-rose-500"></span>
                 <span class="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-amber-500"></span>
                 <span class="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-emerald-500"></span>
-                <span class="ml-1.5 font-mono text-[10px] sm:text-[11px] text-slate-400 font-bold hidden sm:inline">demo.aplikasikeuanganumkm.web.id · Pratinjau Ruang Kerja</span>
+                <span class="ml-1.5 font-mono text-[10px] sm:text-[11px] text-slate-400 font-bold hidden sm:inline">aplikasikeuanganumkm.web.id · Video Panduan &amp; Ruang Kerja</span>
             </div>
 
             {{-- Tab Switcher --}}
             <div class="flex items-center gap-1 bg-slate-950 p-1 rounded-xl border border-slate-800">
+                <button @click="tab = 'video'" :class="tab === 'video' ? 'bg-amber-400 text-slate-950 font-black' : 'text-slate-400 hover:text-white'" class="rounded-lg px-2.5 sm:px-3 py-1 text-[11px] sm:text-xs font-bold transition inline-flex items-center gap-1.5">
+                    <span class="text-[10px]">▶</span> Video Panduan (84s)
+                </button>
                 <button @click="tab = 'dashboard'" :class="tab === 'dashboard' ? 'bg-amber-400 text-slate-950 font-black' : 'text-slate-400 hover:text-white'" class="rounded-lg px-2.5 sm:px-3 py-1 text-[11px] sm:text-xs font-bold transition">
                     Dashboard Laba
                 </button>
@@ -154,8 +162,39 @@
             </div>
         </div>
 
-        {{-- Tab Content 1: Dashboard --}}
-        <div x-show="tab === 'dashboard'" class="p-4 sm:p-6 lg:p-8 bg-slate-900 space-y-4 sm:space-y-6">
+        {{-- Tab Content 1: Video Panduan (Default) --}}
+        <div x-show="tab === 'video'" class="relative bg-slate-950 p-3 sm:p-5">
+            <div class="relative overflow-hidden rounded-xl border border-slate-800/80 bg-black aspect-video shadow-2xl">
+                <video
+                    controls
+                    preload="metadata"
+                    poster="/video/poster.png"
+                    class="w-full h-full object-cover rounded-xl"
+                >
+                    <source src="/video/panduan-umkm.mp4" type="video/mp4">
+                    <track src="/video/panduan-umkm.id.vtt" kind="subtitles" srclang="id" label="Bahasa Indonesia" default>
+                    Browser Anda tidak mendukung pemutar video HTML5.
+                </video>
+            </div>
+            <div class="mt-3.5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5 px-1.5 text-[11px] sm:text-xs text-slate-400">
+                <div class="flex items-center gap-2">
+                    <span class="inline-flex h-2 w-2 rounded-full bg-amber-400 animate-pulse"></span>
+                    <span class="font-medium text-slate-300">🎙️ Dilengkapi Narasi Suara &amp; Subtitle Bahasa Indonesia · Resolusi 1080p Full HD</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <a href="{{ route('download.guide') }}" class="text-amber-400 hover:text-amber-300 font-bold transition underline underline-offset-4">
+                        Unduh Panduan Uji Coba (.docx) &darr;
+                    </a>
+                    <span>·</span>
+                    <a href="#demo" class="text-white hover:text-amber-300 font-extrabold transition">
+                        Coba Demo 1-Klik &rarr;
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        {{-- Tab Content 2: Dashboard --}}
+        <div x-show="tab === 'dashboard'" class="p-4 sm:p-6 lg:p-8 bg-slate-900 space-y-4 sm:space-y-6" style="display: none;">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
                 <div class="rounded-xl border border-slate-800 bg-slate-950/70 p-3.5 sm:p-4">
                     <p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Total Omzet</p>
